@@ -8,14 +8,16 @@ O objetivo do trabalho prático 1 foi construir um algoritmo que resolve o probl
 Para esta seção, serão feitos tópicos que descrevem as implementações de cada um dos algoritmos citados na introdução.
 <ol>
 	<li>
-		teste
+		Corte de orelhas
 	</li>
-	teste
+	O algoritmo do corte de orelhas é uma técnica descrita em sala de aula para realizar a triangulação de um polígono dado, ou seja, transformar um polígono convexo em uma composição de diferentes triângulos. Um exemplo de triangulação pode ser visto nas imagens a seguir: 
+	<img src = "imgs/models_llm.png"/>
 	<li>
 		teste
 	</li>
 	teste
 </ol>
+
 # Análise dos Resultados
 
 # Conclusão
