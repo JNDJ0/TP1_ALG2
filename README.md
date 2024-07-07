@@ -19,7 +19,8 @@ Para esta seção, serão feitos tópicos que descrevem as implementações de c
 		<li>Função <i>is_clock_wise(polygon)</i>: verifica se os pontos do polígono estão em sentido horário;</li>
 	</ul>
 	<br>
-	A função principal, chamada <i>get_unique_ear(polygon, n_frames)</i> recebe o polígono de entrada e um valor que representa o número de frames necessários para a animação. Primeiro, se descobre o tamanho do polígono; caso ele possua menos de 3 pontos, não é possível realizar a triangulação. Se ele possuir somente 3 pontos, a triangulação é o próprio polígono. Caso possua mais, então é feita uma iteração sobre o polígono, pegando 3 pontos a cada vez. Em seguida, é avaliado se esses 3 pontos formam um polígono convexo, e se sim, é checada a existência de algum ponto dentro desse polígono. Caso ambas as condições forem válidas, então o polígono é salvo. 
+	A função principal, chamada <i>get_unique_ear(polygon, n_frames)</i> recebe o polígono de entrada e um valor que representa o número de frames necessários para a animação, e retorna um dos triângulos presentes no polígono. Primeiro, se descobre o tamanho do polígono; caso ele possua menos de 3 pontos, não é possível realizar a triangulação. Se ele possuir somente 3 pontos, a triangulação é o próprio polígono. Caso possua mais, então é feita uma iteração sobre o polígono, pegando 3 pontos a cada vez. Em seguida, é avaliado se esses 3 pontos formam um polígono convexo, e se sim, é checada a existência de algum ponto dentro desse polígono. Caso ambas as condições forem válidas, então os três pontos são deletados e o polígono é salvo. 
+	O processo de animação corre em um loop que chama sucessivamente a <i>get_unique_ear</i> até que não hajam mais opções. A cada iteração, é exibido o polígono inteiro e o triângulo que está sendo avaliado. Se ele for um triângulo válido, ele é adicionado ao polígono inteiro. 
 	<li>
 		3-Coloração
 	</li>
