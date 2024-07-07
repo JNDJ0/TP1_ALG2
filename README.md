@@ -10,10 +10,16 @@ Para esta seção, serão feitos tópicos que descrevem as implementações de c
 	<li>
 		Corte de orelhas
 	</li>
-	O algoritmo do corte de orelhas é uma técnica descrita em sala de aula para realizar a triangulação de um polígono dado, ou seja, transformar um polígono convexo em uma composição de diferentes triângulos. Um exemplo de triangulação pode ser visto nas imagens a seguir: 
+	O algoritmo do corte de orelhas é uma técnica descrita em sala de aula para realizar a triangulação de um polígono dado, ou seja, transformar um polígono convexo em uma composição de diferentes triângulos. Um exemplo de triangulação pode ser visto na imagem a seguir. <br> 
 	<img src = "imgs/triangulacao.jfif"/>
+	Para realizar essa técnica, foi necessário desenvolver algumas funções auxiliares:
+	<ul>
+		<li>Função <i>is_convex(a, b, c)</i>: necessária para determinar se o polígono formado pelos pontos a, b e c é convexo ou não; </li>
+		<li>Função <i>is_in_triangle(a, b, c, p)</i>: necessária para determinar se havia algum ponto p dentro de um triângulo a, b, c formado.</li>
+	</ul>
+	A função principal, chamada <i>get_unique_ear(polygon, n_frames)</i> recebe o polígono de entrada e um valor que representa o número de frames necessários para a animação. Primeiro, se descobre o tamanho do polígono; caso ele possua menos de 3 pontos, não é possível realizar a triangulação. 
 	<li>
-		teste
+		3-Coloração
 	</li>
 	teste
 </ol>
