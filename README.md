@@ -1,2 +1,15 @@
-# TP1ALG2
-Repositório contendo o algoritmo de triangulação de polígonos e a 3-coloração, com o objetivo de resolver o problema da galeria de arte.
+## Relatório
+## Problema da Galeria de Arte
+<b> Integrantes: </b> Antônio Caetano Neves Neto, Beatriz Reis Gama Barbosa, João Lucas Simões Moreira.
+
+# Introdução
+	O problema da galeria de arte consiste em descobrir o número mínimo de câmeras necessárias para cobrir uma área especificada, por motivos de segurança. Para descobrirmos este número,  
+	
+# Metodologia
+	
+# Análise dos Resultados
+
+# Conclusão
+
+# Bibliografias
+
