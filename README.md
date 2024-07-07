@@ -15,7 +15,8 @@ Para esta seção, serão feitos tópicos que descrevem as implementações de c
 	Para realizar essa técnica, foi necessário desenvolver algumas funções auxiliares:
 	<ul>
 		<li>Função <i>is_convex(a, b, c)</i>: necessária para determinar se o polígono formado pelos pontos a, b e c é convexo ou não; </li>
-		<li>Função <i>is_in_triangle(a, b, c, p)</i>: necessária para determinar se havia algum ponto p dentro de um triângulo a, b, c formado.</li>
+		<li>Função <i>is_in_triangle(a, b, c, p)</i>: necessária para determinar se havia algum ponto p dentro de um triângulo a, b, c formado;</li>
+		<li>Função <i>is_clock_wise(polygon)</i>: verifica se os pontos do polígono estão em sentido horário;</li>
 	</ul>
 	<br>
 	A função principal, chamada <i>get_unique_ear(polygon, n_frames)</i> recebe o polígono de entrada e um valor que representa o número de frames necessários para a animação. Primeiro, se descobre o tamanho do polígono; caso ele possua menos de 3 pontos, não é possível realizar a triangulação. Se ele possuir somente 3 pontos, a triangulação é o próprio polígono. Caso possua mais, então é feita uma iteração sobre o polígono, pegando 3 pontos a cada vez. Em seguida, é avaliado se esses 3 pontos formam um polígono convexo, e se sim, é checada a existência de algum ponto dentro desse polígono. Caso ambas as condições forem válidas, então o polígono é salvo. 
