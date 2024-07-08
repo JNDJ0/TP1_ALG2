@@ -26,7 +26,7 @@ Para esta seção, serão feitos tópicos que descrevem as implementações de c
 	<li>
 		3-Coloração
 	</li>
-	O algoritmo da 3-coloração foi utilizado sobre uma instância de grafo que é capaz de executar esse problema NP em tempo polinomial. Para gerar esse grafo, é necessário transformar o polígono triangulado utilizando as seguintes regras:
+	O algoritmo da 3-coloração foi utilizado sobre uma instância de grafo que pode ser resolvida em tempo polinomial, apesar de o problema ser conhecidamente NP. Para gerar esse grafo, é necessário transformar o polígono triangulado utilizando as seguintes regras:
 	<ul>
 		<li>Vértices: cada triângulo do polígono se torna um vértice; </li>
 		<li>Arestas: se dois triângulos compartilham uma aresta, então existirá uma aresta entre eles no grafo gerado.</li>
