@@ -1,10 +1,10 @@
 <style>
-	.teste1{
+	.teste1 {
 		color: red;
 	}
 </style>
 
-## Relatório - Problema da Galeria de Arte {#identifier .teste1}
+## Relatório - Problema da Galeria de Arte
 <b> Integrantes: </b> Antônio Caetano Neves Neto, Beatriz Reis Gama Barbosa, João Lucas Simões Moreira.
 
 # Introdução
@@ -12,7 +12,7 @@ O objetivo do trabalho prático 1 foi construir um algoritmo que resolve o probl
 	
 # Metodologia & complexidade
 Para esta seção, serão feitos tópicos que descrevem as implementações de cada um dos algoritmos citados na introdução.
-<ol>
+<ol class = "teste1"> 
 	<li>
 		Corte de orelhas
 	</li>
