@@ -44,7 +44,10 @@ Para esta seção, serão feitos tópicos que descrevem as implementações de c
 
 # Conclusão
 Assim, a partir da 3-coloração dos n triângulos, podemos concluir que a quantidade de câmeras necessárias para cobrir o polígono é ⌊n/3⌋. Na Figura 6, podemos ver a disposição das câmeras no polígono de exemplo.
-<img src = "imgs/cameras.png"/>
+
+<div align="center">
+	<img src = "imgs/cameras.png"/>
+</div>
 <p align="center">Figura 6: disposição das câmeras.</p>
 
 # Bibliografias
