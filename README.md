@@ -31,7 +31,7 @@ Para esta seção, serão feitos tópicos que descrevem as implementações de c
 		<li>Vértices: cada triângulo do polígono se torna um vértice; </li>
 		<li>Arestas: se dois triângulos compartilham uma aresta, então existirá uma aresta entre eles no grafo gerado.</li>
 	</ul>
-	<br> Com isso, é gerado um grafo dual, conexo, que corresponde a uma árvore. Para colorir esse grafo, podemos fazer uma DFS sobre os nós da árvore, e a cada nó explorado, é feita a coloração de seus 3 vértices associados no polígono triangulado. Os vídeos (tanto da DFS quanto da coloração) podem ser vistos abaixo.
+	<br> Com isso, é gerado um grafo dual ao polígono, conexo, que corresponde a uma árvore. Para colorir esse grafo, podemos fazer uma DFS sobre os nós da árvore, e a cada nó explorado, é feita a coloração de seus 3 vértices associados no polígono triangulado. Os vídeos (tanto da DFS quanto da coloração) podem ser vistos abaixo.
 	<img src = "imgs/dfs.gif"/>
 	<img src = "imgs/coloracao.gif"/>
 </ol>
