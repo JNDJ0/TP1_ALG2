@@ -4,7 +4,7 @@
 # Introdução
 O objetivo do trabalho prático 1 foi construir um algoritmo que resolve o problema da galeria de arte para um dado polígono, cujo propósito é decidir o número de câmeras para vigiar uma área e o posicionamento necessário para elas. A solução empregada consistiu em desenvolver dois algoritmos distintos: o <b> algoritmo do corte de orelhas </b>, feito para triangular o polígono de entrada, e o <b> algoritmo da 3-coloração </b>, que foi construído sobre o grafo dual do polígono triangulado, feito para decidir onde posicionar cada câmera necessária, cujo número é ⌊n/3⌋, onde n é o número de triângulos formados.
 	
-# Metodologia
+# Metodologia & complexidade
 Para esta seção, serão feitos tópicos que descrevem as implementações de cada um dos algoritmos citados na introdução.
 <ol>
 	<li>
@@ -20,7 +20,7 @@ Para esta seção, serão feitos tópicos que descrevem as implementações de c
 	</ul>
 	<br>
 	A função principal, chamada <i>get_unique_ear(polygon, n_frames)</i> recebe pontos do polígono de entrada e um valor que representa o número de frames necessários para a animação, e retorna o primeiro triângulo detectado no polígono. Primeiramente, se descobre o tamanho do polígono; caso ele possua menos de 3 pontos, não é possível realizar a triangulação. Se ele possuir somente 3 pontos, a triangulação é o próprio polígono. Caso possua mais, então é feita uma iteração sobre o polígono, pegando 3 pontos a cada vez. Em seguida, é avaliado se esses 3 pontos formam um polígono convexo, e se sim, é checada a existência de algum ponto dentro desse polígono. Caso ambas as condições forem válidas, então os três pontos são deletados e o polígono é salvo. <br>
-	O processo de animação corre em um loop que chama sucessivamente a <i>get_unique_ear</i> até que não hajam mais opções de triângulos a serem formados. A cada iteração, é exibido o polígono inteiro e o triângulo que está sendo avaliado (em amarelo). Se ele for um triângulo válido, ele é adicionado ao polígono inteiro. O vídeo com esse processo pode ser visto abaixo. 
+	O processo de animação corre em um loop que chama sucessivamente a <i>get_unique_ear</i> até que não hajam mais opções de triângulos a serem formados. A cada iteração, é exibido o polígono inteiro e o triângulo que está sendo avaliado (em amarelo). Se ele for um triângulo válido, ele é adicionado ao polígono inteiro. A complexidade desse algoritmo é quadrática, pois para cada triângulo formado, é necessário avaliar se existe algum ponto entre os demais que está dentro dele. O vídeo com esse processo pode ser visto abaixo. 
 	<img src = "imgs/triangulacao.gif"/>
 	<br>
 	<li>
@@ -31,12 +31,11 @@ Para esta seção, serão feitos tópicos que descrevem as implementações de c
 		<li>Vértices: cada triângulo do polígono se torna um vértice; </li>
 		<li>Arestas: se dois triângulos compartilham uma aresta, então existirá uma aresta entre eles no grafo gerado.</li>
 	</ul>
-	<br> Com isso, é gerado um grafo dual ao polígono, conexo, que corresponde a uma árvore. Para colorir esse grafo, podemos fazer uma DFS sobre os nós da árvore, e a cada nó explorado, é feita a coloração de seus 3 vértices associados no polígono triangulado. Os vídeos (tanto da DFS quanto da coloração) podem ser vistos abaixo.
+	<img src = "imgs/dual.jfif"/>
+	<br> Com isso, é gerado um grafo dual ao polígono, conexo, que corresponde a uma árvore. Com ele, podemos realizar uma busca em profundidade (DFS), e cada vértice será visitado apenas uma vez. Para cada nó explorado, é feita a coloração de seus 3 vértices associados no polígono triangulado. Como a DFS é proporcional ao número de arestas no grafo dual, a 3-coloração é feita em tempo linear. Os vídeos com os processos descritos (tanto da DFS quanto da coloração) podem ser vistos abaixo.
 	<img src = "imgs/dfs.gif"/>
 	<img src = "imgs/coloracao.gif"/>
 </ol>
-
-# Análise dos Resultados
 
 # Conclusão
 
