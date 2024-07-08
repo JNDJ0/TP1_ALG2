@@ -1,9 +1,3 @@
-<style>
-	.teste1 {
-		color: red;
-	}
-</style>
-
 ## Relatório - Problema da Galeria de Arte
 <b> Integrantes: </b> Antônio Caetano Neves Neto, Beatriz Reis Gama Barbosa, João Lucas Simões Moreira.
 
@@ -12,7 +6,7 @@ O objetivo do trabalho prático 1 foi construir um algoritmo que resolve o probl
 	
 # Metodologia & complexidade
 Para esta seção, serão feitos tópicos que descrevem as implementações de cada um dos algoritmos citados na introdução.
-<ol class = "teste1"> 
+<ol> 
 	<li>
 		Corte de orelhas
 	</li>
@@ -29,7 +23,7 @@ Para esta seção, serão feitos tópicos que descrevem as implementações de c
 	O processo de animação corre em um loop que chama sucessivamente a <i>get_unique_ear</i> até que não hajam mais opções de triângulos a serem formados. A cada iteração, é exibido o polígono inteiro e o triângulo que está sendo avaliado (em amarelo). Se ele for um triângulo válido, ele é adicionado ao polígono inteiro. A complexidade desse algoritmo é quadrática, pois para cada triângulo formado, é necessário avaliar se existe algum ponto entre os demais que está dentro dele. O vídeo com esse processo pode ser visto abaixo. 
 	<figure>
 		<img src = "imgs/triangulacao.gif"/>
-		<figcaption> Processo da triangulação </figcaption>
+		<figcaption> 									Processo da triangulação </figcaption>
 	</figure>
 	<br>
 	<li>
@@ -49,4 +43,8 @@ Para esta seção, serão feitos tópicos que descrevem as implementações de c
 # Conclusão
 
 # Bibliografias
-
+<ul>
+	<li>Computational Geometry in C, 2nd ed., J. O’Rourke</li>
+	<li>Cormen, T. H., Leiserson, C. E., & Rivest, R. L. (1990). Introduction to algorithms.</li>
+	<li>Slides da disciplina de Algoritmos 2</li>
+</ul>
