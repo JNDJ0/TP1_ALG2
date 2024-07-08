@@ -25,8 +25,9 @@ Para esta seção, serão feitos tópicos que descrevem as implementações de c
 	A função principal, chamada <i>get_unique_ear(polygon, n_frames)</i> recebe pontos do polígono de entrada e um valor que representa o número de frames necessários para a animação, e retorna o primeiro triângulo detectado no polígono. Primeiramente, se descobre o tamanho da entrada; caso existam menos de 3 pontos, não é possível realizar a triangulação. Se ela possuir somente 3 pontos, a triangulação é o próprio polígono. Caso possua mais, então é feita uma iteração sobre a entrada, pegando 3 pontos a cada vez. Em seguida, é avaliado se esses 3 pontos formam um polígono convexo, e se sim, é checado se não existem pontos dentro desse polígono. Caso ambas as condições forem válidas, então os três pontos são deletados e o polígono é salvo. <br>
 	O processo de animação corre em um loop que chama sucessivamente a <i>get_unique_ear</i> até que não haja mais opções de triângulos a serem formados. A cada iteração, é exibido o polígono inteiro e o triângulo que está sendo avaliado (em amarelo). Se ele for um triângulo válido, ele é adicionado ao polígono inteiro. A complexidade desse algoritmo é quadrática, pois para cada triângulo formado, é necessário avaliar se existe algum ponto entre os demais que está dentro dele. O vídeo com esse processo pode ser visto abaixo. 
 	<div>
-		<p align="center">Figura 2: Animação da triangulação.</p>
+		<img src = "imgs/triangulacao.gif"/>
 	</div>
+	<p align="center">Figura 2: Animação da triangulação.</p>
 	<br>
 	<li>
 		3-Coloração
