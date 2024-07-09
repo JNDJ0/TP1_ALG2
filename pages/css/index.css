@@ -1,0 +1,40 @@
+body {
+    background-color: black;
+    color: white;
+	border-color: white;
+}
+
+.main {
+    margin: auto;
+    width: 80%;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    padding-right: 100px;
+    z-index: 1;
+}
+
+.animation-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+img {
+    max-width: 700px;
+    max-height: 500px;
+}
+
+img#background {
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(75%);
+    filter: grayscale(20%);
+    max-width: 2000px;
+    max-height: 2000px;
+    background-color: aqua;
+}
