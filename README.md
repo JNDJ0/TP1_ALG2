@@ -38,7 +38,7 @@ Para esta seção, serão feitos tópicos que descrevem as implementações de c
 		<li>Arestas: se dois triângulos compartilham uma aresta, então existirá uma aresta entre eles no grafo gerado.</li>
 	</ul>
 	<div align="center">
-		<img src = "imgs/dual.jfif"/>
+		<img src = "imgs/arvore.png"/>
 	</div>
 	<p align="center">Figura 3: Processo de construção do grafo dual ao polígono de entrada.</p>
 	<br> Com isso, é gerado um grafo dual ao polígono, conexo, que corresponde a uma árvore. Com ele, podemos realizar uma busca em profundidade (DFS), e cada vértice será visitado apenas uma vez. Para cada nó explorado, é feita a coloração de seus 3 vértices associados no polígono triangulado. Como a DFS é proporcional ao número de arestas no grafo dual, a 3-coloração é feita em tempo linear. Os vídeos com os processos descritos (tanto da DFS quanto da coloração) podem ser vistos abaixo.
