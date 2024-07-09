@@ -60,7 +60,7 @@ Assim, a partir da 3-coloração dos n triângulos, podemos concluir que a quant
 </div>
 <p align="center">Figura 6: Disposição das câmeras.</p>
 
-# Bibliografias
+# Bibliografia
 <ul>
 	<li>Computational Geometry in C, 2nd ed., J. O’Rourke</li>
 	<li>Cormen, T. H., Leiserson, C. E., & Rivest, R. L. (1990). Introduction to algorithms.</li>
