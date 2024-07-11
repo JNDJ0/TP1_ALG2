@@ -27,37 +27,36 @@
         </div>
 
         <h2 id="introdu-o">Contextualização</h2>
-        <p> O problema da galeria de arte consiste na decisão do número mínimo de câmeras necessárias para vigiar uma área - dada por um polígono -, 
+        <p class="justified-text"> O problema da galeria de arte consiste na decisão do número mínimo de câmeras necessárias para vigiar uma área - dada por um polígono -, 
         além do posicionamento das câmeras em questão. A solução empregada foi o desenvolvimento de dois algoritmos distintos: o <b> 
         algoritmo do corte de orelhas </b>, feito para dividir em triângulos o polígono de entrada, e o <b> algoritmo da 3-coloração </b>, que
         foi construído sobre o grafo dual do polígono triangulado e usado para decidir onde posicionar cada câmera necessária. 
         A quantidade total de câmeras é ⌊n/3⌋, onde n é o número de triângulos formados, o que será explicado na etapa de coloração.</p>
 
         <h2 id="metodologia-complexidade">Metodologia &amp; Complexidade</h2>
-        <p>Para esta seção, serão descritas as implementações de cada um dos algoritmos citados na contextualização.</p>
+        <p class="justified-text"> Para esta seção, serão descritas as implementações de cada um dos algoritmos citados na contextualização.</p>
         <ol>
             <li>
-                Corte de orelhas
+                <p style="font-weight: bold;"> Corte de orelhas </p>
             </li>
-            O algoritmo do corte de orelhas é uma técnica para realizar a triangulação de um  polígono dado, ou seja, transformar um polígono 
-            convexo em uma composição de diferentes triângulos. Um exemplo de triangulação pode ser visto na imagem a seguir. <br>
+            <p class="justified-text"> O algoritmo do corte de orelhas é uma técnica para realizar a triangulação de um  polígono dado, ou seja, transformar um polígono 
+            convexo em uma composição de diferentes triângulos. Um exemplo de triangulação pode ser visto na imagem a seguir. </p><br>
             <div align="center">
                 <img src="../imgs/triangulacao_dark.jpeg" id="normal"/>
             </div>
             <p align="center">Figura 1: À esquerda, o polígono de entrada, e à direita, o polígono triangulado.</p>
             Para realizar essa técnica, foi necessário desenvolver algumas funções auxiliares:
             <ul>
-                <li>Função <i>is_convex(a, b, c)</i>: necessária para determinar se o polígono formado pelos pontos a, b
+                <li> <p class="justified-text"> Função <i>is_convex(a, b, c)</i>: necessária para determinar se o polígono formado pelos pontos a, b
                     e c
-                    é convexo ou não; </li>
-                <li>Função <i>is_in_triangle(a, b, c, p)</i>: necessária para determinar se havia algum ponto p dentro
-                    de um
-                    triângulo a, b, c formado;</li>
-                <li>Função <i>is_clock_wise(polygon)</i>: necessária para verificar se os pontos do polígono estão em sentido horário;
+                    é convexo ou não; </p></li>
+                <li> <p class="justified-text"> Função <i>is_in_triangle(a, b, c, p)</i>: necessária para determinar se havia algum ponto p dentro
+                    de um triângulo a, b, c formado; </p> </li>
+                <li> <p class="justified-text"> Função <i>is_clock_wise(polygon)</i>: necessária para verificar se os pontos do polígono estão em sentido horário; </p>
                 </li>
             </ul>
             <br>
-            A função principal, chamada <i>get_unique_ear(polygon, n_frames)</i> recebe pontos do polígono de entrada e
+            <p class="justified-text"> A função principal, chamada <i>get_unique_ear(polygon, n_frames)</i> recebe pontos do polígono de entrada e
             um
             valor que representa o número de frames necessários para a animação, e retorna o primeiro triângulo
             detectado no
@@ -73,7 +72,7 @@
             opções de triângulos a serem formados. A cada iteração, é exibido o polígono inteiro e o triângulo que está
             sendo avaliado (em amarelo). Se ele for um triângulo válido, ele é adicionado ao polígono inteiro. A
             complexidade desse algoritmo é quadrática, pois, para cada triângulo formado, é necessário avaliar se existe
-            algum ponto entre os demais que está dentro dele. O vídeo com esse processo pode ser visto abaixo.
+            algum ponto entre os demais que está dentro dele. O vídeo com esse processo pode ser visto abaixo. </p>
 
             <br>
             <!-- <select id="selector" onchange="showTriangulationDiv(event)">
@@ -118,25 +117,25 @@
             <br>
 
             <li>
-                3-Coloração
+                <p style="font-weight: bold;"> 3-Coloração </p>
             </li>
-            O algoritmo da 3-coloração foi utilizado sobre uma instância de grafo que pode ser resolvida em
+            <p class="justified-text"> O algoritmo da 3-coloração foi utilizado sobre uma instância de grafo que pode ser resolvida em
             tempo polinomial, apesar de o problema ser conhecidamente NP. Para gerar esse grafo, é necessário
-            transformar o polígono triangulado utilizando as seguintes regras:
+            transformar o polígono triangulado utilizando as seguintes regras: </p>
             <ul>
                 <li>Vértices: cada triângulo do polígono se torna um vértice; </li>
-                <li>Arestas: se dois triângulos compartilham uma aresta, então existirá uma aresta entre eles no
-                    grafo gerado.</li>
+                <li> <p class="justified-text"> Arestas: se dois triângulos compartilham uma aresta, então existirá uma aresta entre eles no
+                    grafo gerado. </p> </li>
             </ul>
             <div align="center">
                 <img src="../imgs/arvore_dark.jpeg" id="normal"/>
             </div>
                 <p align="center">Figura 3: Processo de construção do grafo dual ao polígono de entrada.</p>
-                <br> Com isso, é gerado um grafo dual ao polígono, conexo, que corresponde a uma árvore. Com ele,
+                <br> <p class="justified-text"> Com isso, é gerado um grafo dual ao polígono, conexo, que corresponde a uma árvore. Com ele,
                 podemos realizar uma busca em profundidade (DFS), e cada vértice será visitado apenas uma vez. Para
                 cada nó explorado, é feita a coloração de seus 3 vértices associados no polígono triangulado. Como a cpmplexidade da DFS
                 é proporcional ao número de arestas no grafo dual, a 3-coloração é feita em tempo linear. Os vídeos
-                com os  processos descritos (tanto da DFS quanto da coloração) podem ser vistos abaixo.
+                com os  processos descritos (tanto da DFS quanto da coloração) podem ser vistos abaixo. </p>
                 <div align="center">
                     <img src="../imgs/dfs_dark.gif" id="normal"/>
                 </div>
@@ -168,7 +167,7 @@
         </ol>
 
         <h2 id="conclus-o">Conclusão</h2>
-        <p>Assim, a partir da 3-coloração dos n triângulos, podemos concluir que a quantidade de câmeras necessárias
+        <p class="justified-text"> Assim, a partir da 3-coloração dos n triângulos, podemos concluir que a quantidade de câmeras necessárias
             para cobrir o polígono é ⌊n/3⌋, uma vez que basta posicioná-las nos vértices de uma única cor. Uma vez que queremos minimizar
             a quantidade de câmeras, escolhemos a cor menos frequente na 3-coloração. 
             Na Figura 6, podemos ver a disposição das câmeras no polígono de exemplo.</p>
