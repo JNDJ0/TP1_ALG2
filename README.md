@@ -1,5 +1,5 @@
 ## Relatório - Problema da Galeria de Arte
-<b> Integrantes: </b> Antônio Caetano Neves Neto, Beatriz Reis Gama Barbosa, João Lucas Simões Moreira.
+<b> Integrantes: </b> Antônio Caetano Neves Neto, Beatriz Reis Gama Barbosa, João Lucas Simões Moreira. <br>
 <b> Acesse o site em https://jndj0.github.io/TP1_ALG2/pages/index.html </b>
 
 # Introdução
