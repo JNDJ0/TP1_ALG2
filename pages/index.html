@@ -9,24 +9,31 @@
     <link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.2/css/cagov.core.css" rel="stylesheet" integrity="sha256-kDYMlt+egSpUJHbZGlUHIGRh0b/TYdUgp/x1OnFJw0M=" crossorigin="anonymous">
     <link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.2/css/colortheme-oceanside.css" rel="stylesheet"  integrity="sha256-PC5Yszm8bAjYYFmjeL8EeB8mHo+S4dJbQt4OwA4aTmg=" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet"> -->
     <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
     <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>     
 </head>
 
 <body>
     <img src="images/background.gif" alt="" id="background">
+    <div class="overlay"></div>
     <div class="main">
+        <div class="title">
+            <h1 id="relat-rio-problema-da-galeria-de-arte">Problema da Galeria de Arte</h1>
+            <i class="subtitle">O que triângulos tem a ver com câmeras?</i>
+            <p class="authors"><b> Autores: </b> Antônio Caetano Neves Neto, Beatriz Reis Gama Barbosa, João Lucas Simões Moreira.</p>
+        </div>
 
-        <h2 id="relat-rio-problema-da-galeria-de-arte">Problema da Galeria de Arte</h2>
-        <p><b> Autores: </b> Antônio Caetano Neves Neto, Beatriz Reis Gama Barbosa, João Lucas Simões Moreira.</p>
-        <h1 id="introdu-o">Contextualização</h1>
+        <h2 id="introdu-o">Contextualização</h2>
         <p> O problema da galeria de arte consiste na decisão do número mínimo de câmeras necessárias para vigiar uma área - dada por um polígono -, 
         além do posicionamento das câmeras em questão. A solução empregada foi o desenvolvimento de dois algoritmos distintos: o <b> 
         algoritmo do corte de orelhas </b>, feito para dividir em triângulos o polígono de entrada, e o <b> algoritmo da 3-coloração </b>, que
         foi construído sobre o grafo dual do polígono triangulado e usado para decidir onde posicionar cada câmera necessária. 
         A quantidade total de câmeras é ⌊n/3⌋, onde n é o número de triângulos formados, o que será explicado na etapa de coloração.</p>
 
-        <h1 id="metodologia-complexidade">Metodologia &amp; complexidade</h1>
+        <h2 id="metodologia-complexidade">Metodologia &amp; Complexidade</h2>
         <p>Para esta seção, serão descritas as implementações de cada um dos algoritmos citados na contextualização.</p>
         <ol>
             <li>
@@ -67,29 +74,33 @@
             sendo avaliado (em amarelo). Se ele for um triângulo válido, ele é adicionado ao polígono inteiro. A
             complexidade desse algoritmo é quadrática, pois, para cada triângulo formado, é necessário avaliar se existe
             algum ponto entre os demais que está dentro dele. O vídeo com esse processo pode ser visto abaixo.
-            <!-- <div align="center">
-                <img src = "../imgs/triangulacao.gif"/>
-            </div> -->
+
             <br>
-            <select id="selector" onchange="showTriangulationDiv(event)">
+            <!-- <select id="selector" onchange="showTriangulationDiv(event)">
                 <option value="div1-triangulation">Triangulação 1</option>
                 <option value="div2-triangulation">Triangulação 2</option>
                 <option value="div3-triangulation">Triangulação 3</option>
-            </select>
-
+            </select> -->
+            
+            <div class="select-buttons">
+                <button onclick="showTriangulation('div1-triangulation')" class="select-animation div1-triangulation" >Superman</button>
+                <button onclick="showTriangulation('div2-triangulation')" class="select-animation div2-triangulation">Complexa</button>
+                <button onclick="showTriangulation('div3-triangulation')" class="select-animation div3-triangulation">Igreja</button>
+            </div>
+            
             <div id="div1-triangulation" class="animation-triangulation-div">
-                <div id="e88ae352-33eb-45d5-b9e4-7db300c4af87" class="plotly-graph-div"></div>
+                <div id="acba2e17-7d5b-4973-86b7-8fd7e194257d" class="plotly-graph-div"></div>
             </div>
             
             <div id="div2-triangulation" class="animation-triangulation-div">
-                <div id="e88ae352-33eb-45d5-b9e4-7db300c4af87" class="plotly-graph-div"></div>
+                <div id="57ca7103-49b0-452e-9fe1-553a17fc5014" class="plotly-graph-div"></div>
             </div>
             
             <div id="div3-triangulation" class="animation-triangulation-div">
-                <div id="e88ae352-33eb-45d5-b9e4-7db300c4af87" class="plotly-graph-div"></div>
+                <div id="c7a2478b-fa97-46c3-a5db-309422d7743c" class="plotly-graph-div"></div>
             </div>
 
-            <script>
+            <!-- <script>
                 function showTriangulationDiv(event) {
                     // Esconde todas as divs
                     const selectedValue = event.target.value;
@@ -102,7 +113,7 @@
                         document.getElementById(selectedValue).style.display = 'flex';
                     }
                 }
-            </script>
+            </script> -->
             <p align=" center">Figura 2: Animação da triangulação.</p>
             <br>
 
@@ -118,7 +129,7 @@
                     grafo gerado.</li>
             </ul>
             <div align="center">
-                <img src="../imgs/dual_dark.jpeg" id="normal"/>
+                <img src="../imgs/arvore_dark.jpeg" id="normal"/>
             </div>
                 <p align="center">Figura 3: Processo de construção do grafo dual ao polígono de entrada.</p>
                 <br> Com isso, é gerado um grafo dual ao polígono, conexo, que corresponde a uma árvore. Com ele,
@@ -169,7 +180,7 @@
             <p align="center">Figura 5: Animação da coloração.</p>
         </ol>
 
-        <h1 id="conclus-o">Conclusão</h1>
+        <h2 id="conclus-o">Conclusão</h2>
         <p>Assim, a partir da 3-coloração dos n triângulos, podemos concluir que a quantidade de câmeras necessárias
             para cobrir o polígono é ⌊n/3⌋, uma vez que basta posicioná-las nos vértices de uma única cor. Uma vez que queremos minimizar
             a quantidade de câmeras, escolhemos a cor menos frequente na 3-coloração. 
@@ -181,7 +192,7 @@
         </p>
         <p align="center">Figura 6: Disposição das câmeras.</p>
 
-        <h1 id="bibliografias">Bibliografia</h1>
+        <h2 id="bibliografias">Bibliografia</h2>
         <ul>
             <li>Computational Geometry in C, 2nd ed., J. O’Rourke</li>
             <li>Cormen, T. H., Leiserson, C. E., &amp; Rivest, R. L. (1990). Introduction to algorithms.</li>
@@ -190,6 +201,7 @@
 
     </div>
 
+    <script src="js/control.js"></script>
     <script src="animation/triangulation1.js"></script>   
     <script src="animation/triangulation2.js"></script>
     <script src="animation/triangulation3.js"></script>
