@@ -22,7 +22,7 @@
     <div class="main">
         <div class="title">
             <h1 id="relat-rio-problema-da-galeria-de-arte">Problema da Galeria de Arte</h1>
-            <i class="subtitle">O que triângulos tem a ver com câmeras?</i>
+            <i class="subtitle">O que triângulos têm a ver com câmeras?</i>
             <p class="authors"><b> Autores: </b> Antônio Caetano Neves Neto, Beatriz Reis Gama Barbosa, João Lucas Simões Moreira.</p>
         </div>
 
@@ -138,42 +138,29 @@
                 é proporcional ao número de arestas no grafo dual, a 3-coloração é feita em tempo linear. Os vídeos
                 com os  processos descritos (tanto da DFS quanto da coloração) podem ser vistos abaixo.
                 <div align="center">
-                    <img src="../imgs/dfs.gif" id="normal"/>
+                    <img src="../imgs/dfs_dark.gif" id="normal"/>
                 </div>
                 <p align="center">Figura 4: Animação da DFS. Em branco, estão os vértices ainda não descobertos pela busca, em cinza os descobertos
                 e em preto aqueles nos quais a busca foi finalizada.</p>
-                <select id="selector" onchange="showColoringDiv(event)">
-                    <option value="div1-coloring">Coloração 1</option>
-                    <option value="div2-coloring">Coloração 2</option>
-                    <option value="div3-coloring">Coloração 3</option>
-                </select>
+                
+                <div class="select-buttons">
+                    <button onclick="showColoring('div1-coloring')" class="select-animation div1-coloring" >Superman</button>
+                    <button onclick="showColoring('div2-coloring')" class="select-animation div2-coloring">Complexa</button>
+                    <button onclick="showColoring('div3-coloring')" class="select-animation div3-coloring">Igreja</button>
+                </div>
+                
                 <br>
                 <div id = "div1-coloring" class = "animation-coloring-div">
-                    <div id = "6b10d88c-f060-4552-a43c-f474e5af59ef" class = "plotly-graph-div"></div>
-                </div>
-                <div id = "div2-coloring" class = "animation-coloring-div">
                     <div id = "0d6809ec-831f-4949-8457-1c59d3bd77cd" class = "plotly-graph-div"></div>
                 </div>
-                <div id = "div3-coloring" class = "animation-coloring-div">
+                <div id = "div2-coloring" class = "animation-coloring-div">
                     <div id = "6b10d88c-f060-4552-a43c-f474e5af59ef" class = "plotly-graph-div"></div>
                 </div>
-                <script>        
-                    const divs = document.querySelectorAll('.animation-coloring-div');
-                    divs.forEach(div => div.style.display = 'none');            
-                    document.getElementById('div1-coloring').style.display = 'flex';
-                </script>
-                <script>
-                    function showColoringDiv(event) {
-                        const selectedValue = event.target.value;
+                <div id = "div3-coloring" class = "animation-coloring-div">
+                    <div id = "fce82a01-9172-4a1a-bd81-c968682c08dd" class = "plotly-graph-div"></div>
+                </div>
 
-                        const divs = document.querySelectorAll('.animation-coloring-div');
-                        divs.forEach(div => div.style.display = 'none');
 
-                        if (selectedValue) {
-                            document.getElementById(selectedValue).style.display = 'flex';
-                        }
-                    }
-            </script>
             <!-- <div align="center">
                 <img src="../imgs/coloracao.gif" id="normal"/>
             </div> -->
