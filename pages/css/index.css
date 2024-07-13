@@ -37,6 +37,26 @@ h1 {
     z-index: 3;
 }
 
+@media (max-width: 768px) {
+    .main {
+        width: 100%;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        padding-left: 30px;
+        padding-right: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        width: 100%;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left: 20px;
+        padding-right: 0px;
+    }
+}
+
 .select-buttons {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -85,20 +105,32 @@ h1 {
 
 .animation-div {
     display: flex;
-    width: 100%;
+    max-width: 100%;
+    max-height: auto;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
 }
-/* 
-.plotly-graph-div {
-    align-self: center;
-    width: 100%;
-} */
 
 img {
-    max-width: 700px;
-    max-height: 500px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media query para dispositivos móveis */
+@media (max-width: 768px) {
+    img {
+        max-width: 90%;
+        max-height: auto;
+    }
+}
+
+/* Media query para telas muito pequenas */
+@media (max-width: 480px) {
+    img {
+        max-width: 100%;
+        max-height: auto;
+    }
 }
 
 img#background {

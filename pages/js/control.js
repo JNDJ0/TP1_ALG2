@@ -5,6 +5,7 @@ function showTriangulation(divId) {
         document.getElementsByClassName(divs[i].id)[0].style.backgroundColor = "#222";
     }
     document.getElementById(divId).style.display = 'flex';
+    document.getElementsByClassName(divId)[0].style.maxWidth = "360px";
     document.getElementsByClassName(divId)[0].style.backgroundColor = "#000";
 }
 
